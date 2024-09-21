@@ -1,0 +1,6 @@
+name: chatColor
+version: '1.0-SNAPSHOT'
+main: org.mythofy.chatColor.ChatColorsPlugin
+api-version: '1.21'
+authors: [ Tavuc ]
+description: A plugin that allows for custom join & leave messages.
