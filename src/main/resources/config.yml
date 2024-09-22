@@ -1,0 +1,141 @@
+# =============================
+#        ChatColors Plugin
+# =============================
+# This configuration file allows you to customize the ChatColors plugin.
+# Modify the settings below to suit your server's requirements.
+
+# ---------------------------------------------------------------------
+# Database Configuration
+# ---------------------------------------------------------------------
+database:
+  host: 185.207.164.1          # MySQL server host address
+  port: 3306                   # MySQL server port (default is 3306)
+  database: test5              # Name of the database to use
+  username: e272_lOEAYpn1fk    # Database username
+  password: zcyGa1zgfYgvGBPyXDeW  # Database password
+
+# ---------------------------------------------------------------------
+# Chat Colors Configuration
+# ---------------------------------------------------------------------
+chat-colors:
+  # Each color entry defines a chat color option available to players.
+  # You can add, remove, or modify colors as needed.
+
+  red:
+    display: "&cRed"           # Display name with color code
+    hex-code: "#FF5555"        # Hexadecimal color code
+    unlock-method: "default"   # This color is available by default
+    gui:
+      icon:
+        material: RED_WOOL     # Material used as the icon in the GUI
+        display-name: "&cRed"  # Display name of the icon with color code
+        lore:
+          - "&7Click to select red chat color."  # Description shown when hovering over the icon
+
+  blue:
+    display: "&9Blue"
+    hex-code: "#5555FF"
+    unlock-method: "playtime"
+    unlock-requirement: 3600   # Seconds of playtime required (1 hour)
+    gui:
+      icon:
+        material: BLUE_WOOL
+        display-name: "&9Blue"
+        lore:
+          - "&7Unlocks after 1 hour of playtime."
+
+  green:
+    display: "&aGreen"
+    hex-code: "#55FF55"
+    unlock-method: "achievement"
+    unlock-requirement: "story/mine_stone"  # Minecraft achievement ID
+    gui:
+      icon:
+        material: GREEN_WOOL
+        display-name: "&aGreen"
+        lore:
+          - "&7Unlocks after killing a mob."
+
+  gold:
+    display: "&6Gold"
+    hex-code: "#FFAA00"
+    unlock-method: "level"
+    unlock-requirement: 10     # Player level required
+    gui:
+      icon:
+        material: GOLD_BLOCK
+        display-name: "&6Gold"
+        lore:
+          - "&7Unlocks at level 10."
+
+  purple:
+    display: "&5Purple"
+    hex-code: "#AA00FF"
+    unlock-method: "permission"
+    unlock-requirement: "chatcolor.purple"  # Permission node required
+    gui:
+      icon:
+        material: PURPLE_WOOL
+        display-name: "&5Purple"
+        lore:
+          - "&7Requires special permission."
+
+  gradient:
+    display: "&eGradient"
+    gradient: ["#FF5555", "#5555FF"]  # Start and end hex codes for the gradient
+    unlock-method: "level"
+    unlock-requirement: 20     # Player level required
+    gui:
+      icon:
+        material: GRAY_STAINED_GLASS_PANE
+        display-name: "&eGradient"
+        lore:
+          - "&7Unlocks at level 20."
+
+  rainbow:
+    display: "&bRainbow"
+    mode: "rainbow"
+    unlock-method: "permission"
+    unlock-requirement: "chatcolor.rainbow"
+    gui:
+      icon:
+        material: WHITE_STAINED_GLASS_PANE
+        display-name: "&bRainbow"
+        lore:
+          - "&7Requires special permission."
+
+
+# ---------------------------------------------------------------------
+# GUI Settings Configuration
+# ---------------------------------------------------------------------
+gui-settings:
+  background-material: GRAY_STAINED_GLASS_PANE
+  title: "Chat Colors"
+  next-page-material: ARROW
+  prev-page-material: ARROW
+
+# ---------------------------------------------------------------------
+# Additional Configurations
+# ---------------------------------------------------------------------
+settings:
+  allow-color-codes: false  # Whether to allow players to use color codes in chat
+  allow-color-codes-ifunlocked: true # Whether to allow players to use color codes in chat if they unlock the color codes
+  cooldown: 60  # Cooldown in seconds between color changes
+  disabled-worlds: []  # List of world names where chat colors are disabled
+
+# ---------------------------------------------------------------------
+# Messages Configuration
+# ---------------------------------------------------------------------
+messages:
+  color-changed: "&aYour chat color has been changed to {color}."
+  color-locked: "&cYou haven't unlocked this color yet."
+  cooldown: "&cYou must wait {time} seconds before changing your color again."
+  no-permission: "&cYou don't have permission to use this command."
+
+# ---------------------------------------------------------------------
+# Custom Color Configuration
+# ---------------------------------------------------------------------
+custom-colors:
+  allow: true  # Set to false to disable custom hex colors
+  unlock-method: "permission"
+  unlock-requirement: "chatcolor.custom"

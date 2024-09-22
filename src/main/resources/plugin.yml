@@ -1,0 +1,82 @@
+# =============================
+#        ChatColors Plugin
+# =============================
+# The plugin.yml file defines essential metadata and configurations for the ChatColors plugin.
+
+name: ChatColor
+version: 1.0
+main: org.mythofy.chatcolors.ChatColorsPlugin
+api-version: 1.21
+
+# ---------------------------------------------------------------------
+# Commands Configuration
+# ---------------------------------------------------------------------
+commands:
+  chatcolor:
+    description: Change your chat color or open the color selection GUI
+    usage: |
+      /<command> [color]
+      /<command> gui [page]
+      /<command> gradient <start_color> <end_color>
+    permission: chatcolor.use
+    permission-message: "You do not have permission to use chat colors."
+
+# ---------------------------------------------------------------------
+# Permissions Configuration
+# ---------------------------------------------------------------------
+permissions:
+  chatcolor.use:
+    description: Allows the use of the /chatcolor command
+    default: true
+
+  chatcolor.color.*:
+    description: Allows the use of all chat colors
+    default: op
+    children:
+      chatcolor.color.red: true
+      chatcolor.color.blue: true
+      chatcolor.color.green: true
+      chatcolor.color.gold: true
+      chatcolor.color.purple: true
+
+  chatcolor.color.red:
+    description: Allows the use of the red chat color
+    default: false
+
+  chatcolor.color.blue:
+    description: Allows the use of the blue chat color
+    default: false
+
+  chatcolor.color.green:
+    description: Allows the use of the green chat color
+    default: false
+
+  chatcolor.color.gold:
+    description: Allows the use of the gold chat color
+    default: false
+
+  chatcolor.color.purple:
+    description: Allows the use of the purple chat color
+    default: false
+
+  chatcolor.custom:
+    description: Allows the use of custom chat colors
+    default: false
+
+  chatcolor.gradient:
+    description: Allows the use of gradient chat colors
+    default: false
+
+  chatcolor.rainbow:
+    description: Allows the use of rainbow chat colors
+    default: false
+
+  chatcolor.admin:
+    description: Grants all ChatColor permissions
+    default: op
+    children:
+      chatcolor.use: true
+      chatcolor.color.*: true
+      chatcolor.custom: true
+      chatcolor.gradient: true
+      chatcolor.rainbow: true
